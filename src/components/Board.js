@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Square } from "./Square";
 
 
@@ -41,8 +41,12 @@ export const Board = ({xIsNext, squares, onPlay}) => {
             const [a, b, c] = lines[i];
             if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
               return squares[a];
+            } 
+            if (squares.every((square) => square !== null)) {
+                return 'Draw'; // Return 'Draw' if all squares are filled and no winner
             }
           }
+
         return null;
     }
 
