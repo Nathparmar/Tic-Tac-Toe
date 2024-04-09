@@ -4,8 +4,6 @@ import { Square } from "./Square";
 
 export const Board = ({xIsNext, squares, onPlay}) => {
 
-    // const [xIsNext, setXIsNext] = useState(true);
-    // const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i) {
         const nextSquares = squares.slice();
@@ -21,8 +19,7 @@ export const Board = ({xIsNext, squares, onPlay}) => {
         }
         onPlay(nextSquares);
 
-        // setSquares(nextSquares);
-        // setXIsNext(!xIsNext);
+
     }
 
     function calculateWinner(squares){
